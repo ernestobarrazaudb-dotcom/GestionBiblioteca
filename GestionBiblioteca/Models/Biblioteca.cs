@@ -131,55 +131,6 @@ namespace GestionBiblioteca.Models
             return prestamos;
         }
 
-        // Función para guardar datos en archivos
-        public void GuardarDatos(string folder)
-        {
-            Directory.CreateDirectory(folder);
-            var librosPath = Path.Combine(folder, "libros.txt");
-            var usuariosPath = Path.Combine(folder, "usuarios.txt");
-            var prestamosPath = Path.Combine(folder, "prestamos.txt");
-
-            File.WriteAllLines(librosPath, this.ListarLibros().Select(l => $"{l.Id}|{Escape(l.Titulo)}"));
-            File.WriteAllLines(usuariosPath, this.ListarUsuarios().Select(u => $"{u.Id}|{Escape(u.Nombre)}"));
-            File.WriteAllLines(prestamosPath, this.ListarPrestamos().Select(p =>
-                $"{p.Id}|{p.IdLibro}|{p.IdUsuario}|{p.FechaPrestamo:o}|{(p.FechaDevolucion.HasValue ? p.FechaDevolucion.Value.ToString("o") : "")}"));
-        }
-
-        public void CargarDatos(string folder)
-        {
-            if (!Directory.Exists(folder)) return;
-            var librosPath = Path.Combine(folder, "libros.txt");
-            var usuariosPath = Path.Combine(folder, "usuarios.txt");
-            var prestamosPath = Path.Combine(folder, "prestamos.txt");
-
-            if (File.Exists(librosPath))
-            {
-                var lines = File.ReadAllLines(librosPath);
-                // limpiar lista interna de libros y volver a poblarla según la estructura de tu clase
-                foreach (var line in lines)
-                {
-                    var parts = line.Split('|');
-                    var id = int.Parse(parts[0]);
-                    var titulo = Unescape(parts[1]);
-                    // Añadir/crear objeto Libro con id,titulo
-                }
-            }
-
-            // Repetir similar para usuarios y préstamos; parsear fechas con DateTime.ParseExact(..., null, DateTimeStyles.RoundtripKind)
-            if (File.Exists(usuariosPath))
-            {
-                var lines = File.ReadAllLines(usuariosPath);
-                // limpiar lista interna de libros y volver a poblarla según la estructura de tu clase
-                foreach (var line in lines)
-                {
-                    var parts = line.Split('|');
-                    var id = int.Parse(parts[0]);
-                    var nombre = Unescape(parts[1]);
-                    var correo = Unescape(parts[2]);
-                    // Añadir/crear objeto Libro con id,titulo
-                }
-            }
-        }
         // Validaciones
         private bool ValidarLibro(Libro libro)
         {

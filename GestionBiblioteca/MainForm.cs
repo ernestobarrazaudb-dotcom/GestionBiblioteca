@@ -14,7 +14,6 @@ namespace GestionBiblioteca
         {
             InitializeComponent();
             biblioteca = new Biblioteca();
-            biblioteca.CargarDatos("usuarios.txt");
         }
         private void BtnGestionarLibros_Click(object sender, EventArgs e)
         {
@@ -43,12 +42,6 @@ namespace GestionBiblioteca
         private void BtnSalir_Click(object sender, EventArgs e)
         {
             this.Close(); // Cierra la aplicación
-        }
-
-        protected override void OnFormClosing(FormClosingEventArgs e)
-        {
-            base.OnFormClosing(e);
-            biblioteca.GuardarDatos(dataFolder);
         }
     }
 }

@@ -16,9 +16,6 @@ namespace GestionBiblioteca
     public partial class GestionarUsuariosForm : Form
     {
         private Biblioteca biblioteca;
-        private readonly string dataFolder = Path.Combine(
-            Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
-            "GestionBiblioteca");
 
         // Parameterless constructor required by the Windows Forms designer
         public GestionarUsuariosForm()
@@ -32,7 +29,6 @@ namespace GestionBiblioteca
             InitializeComponent();
             this.biblioteca = biblioteca;
             CargarUsuarios();
-            biblioteca.CargarDatos("usuarios.txt");
         }
 
         private void btnAgregarUsuario_Click(object sender, EventArgs e)
@@ -48,7 +44,6 @@ namespace GestionBiblioteca
 
             Usuario nuevoUsuario = new Usuario(biblioteca.ListarUsuarios().Count + 1, nombre, correo);
             biblioteca.AgregarUsuario(nuevoUsuario);
-            biblioteca.GuardarDatos("usuarios.txt");
             CargarUsuarios();
             LimpiarCampos();
 

@@ -25,6 +25,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtNombre
@@ -45,7 +46,7 @@
             // 
             // btnAgregarUsuario
             // 
-            this.btnAgregarUsuario.Location = new System.Drawing.Point(17, 117);
+            this.btnAgregarUsuario.Location = new System.Drawing.Point(17, 115);
             this.btnAgregarUsuario.Name = "btnAgregarUsuario";
             this.btnAgregarUsuario.Size = new System.Drawing.Size(75, 23);
             this.btnAgregarUsuario.TabIndex = 2;
@@ -55,7 +56,7 @@
             // 
             // btnActualizarUsuario
             // 
-            this.btnActualizarUsuario.Location = new System.Drawing.Point(98, 117);
+            this.btnActualizarUsuario.Location = new System.Drawing.Point(98, 115);
             this.btnActualizarUsuario.Name = "btnActualizarUsuario";
             this.btnActualizarUsuario.Size = new System.Drawing.Size(75, 23);
             this.btnActualizarUsuario.TabIndex = 3;
@@ -65,7 +66,7 @@
             // 
             // btnEliminarUsuario
             // 
-            this.btnEliminarUsuario.Location = new System.Drawing.Point(179, 117);
+            this.btnEliminarUsuario.Location = new System.Drawing.Point(179, 115);
             this.btnEliminarUsuario.Name = "btnEliminarUsuario";
             this.btnEliminarUsuario.Size = new System.Drawing.Size(75, 23);
             this.btnEliminarUsuario.TabIndex = 4;
@@ -76,7 +77,7 @@
             // lstUsuarios
             // 
             this.lstUsuarios.FormattingEnabled = true;
-            this.lstUsuarios.Location = new System.Drawing.Point(12, 156);
+            this.lstUsuarios.Location = new System.Drawing.Point(12, 161);
             this.lstUsuarios.Name = "lstUsuarios";
             this.lstUsuarios.Size = new System.Drawing.Size(484, 121);
             this.lstUsuarios.TabIndex = 5;
@@ -84,7 +85,7 @@
             // 
             // SalirUsuario
             // 
-            this.SalirUsuario.Location = new System.Drawing.Point(388, 285);
+            this.SalirUsuario.Location = new System.Drawing.Point(403, 289);
             this.SalirUsuario.Name = "SalirUsuario";
             this.SalirUsuario.Size = new System.Drawing.Size(92, 24);
             this.SalirUsuario.TabIndex = 6;
@@ -119,9 +120,19 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "GESTIÓN DE USUARIOS";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(13, 148);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(100, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Listado de Usuarios";
+            // 
             // GestionarUsuariosForm
             // 
             this.ClientSize = new System.Drawing.Size(508, 321);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -149,5 +160,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

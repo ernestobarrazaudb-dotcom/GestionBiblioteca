@@ -89,7 +89,7 @@
             // 
             // EstadisticasForm
             // 
-            this.ClientSize = new System.Drawing.Size(700, 328);
+            this.ClientSize = new System.Drawing.Size(695, 324);
             this.Controls.Add(this.SalirUsuario);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.chartEstadisticas);

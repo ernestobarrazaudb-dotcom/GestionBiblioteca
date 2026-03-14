@@ -40,6 +40,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.SalirUsuario = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtTitulo
@@ -68,7 +69,7 @@
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(429, 103);
+            this.btnActualizar.Location = new System.Drawing.Point(429, 97);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(114, 34);
             this.btnActualizar.TabIndex = 5;
@@ -78,7 +79,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(432, 164);
+            this.btnEliminar.Location = new System.Drawing.Point(432, 148);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(111, 33);
             this.btnEliminar.TabIndex = 6;
@@ -140,7 +141,7 @@
             // 
             // SalirUsuario
             // 
-            this.SalirUsuario.Location = new System.Drawing.Point(451, 373);
+            this.SalirUsuario.Location = new System.Drawing.Point(451, 364);
             this.SalirUsuario.Name = "SalirUsuario";
             this.SalirUsuario.Size = new System.Drawing.Size(92, 24);
             this.SalirUsuario.TabIndex = 14;
@@ -148,11 +149,21 @@
             this.SalirUsuario.UseVisualStyleBackColor = true;
             this.SalirUsuario.Click += new System.EventHandler(this.SalirUsuario_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(14, 191);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(87, 13);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Listado de Libros";
+            // 
             // GestionarLibrosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(558, 409);
+            this.ClientSize = new System.Drawing.Size(558, 393);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.SalirUsuario);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -186,5 +197,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button SalirUsuario;
+        private System.Windows.Forms.Label label3;
     }
 }

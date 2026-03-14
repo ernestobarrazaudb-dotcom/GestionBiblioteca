@@ -36,7 +36,7 @@ namespace GestionBiblioteca
         {
             try
             {
-                var libro = new Libro(siguienteId++, txtTitulo.Text, txtAutor.Text, int.Parse(txtAnioPublicacion.Text));
+                var libro = new Libro(0, txtTitulo.Text, txtAutor.Text, int.Parse(txtAnioPublicacion.Text));
                 biblioteca.AgregarLibro(libro);
                 CargarLibros();
                 LimpiarCampos();

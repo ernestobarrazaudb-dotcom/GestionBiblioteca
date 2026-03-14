@@ -13,6 +13,8 @@ namespace GestionBiblioteca.Models
         private List<Libro> libros = new List<Libro>();
         private List<Usuario> usuarios = new List<Usuario>();
         private List<Prestamo> prestamos = new List<Prestamo>();
+        private int ultimoIdUsuario = 0; // Contador de IDs de usuario
+        private int ultimoIdLibro = 0; // Contador de IDs de Libro
         private int siguienteIdPrestamo = 1; // Para asignar IDs únicos a los préstamos
 
         // Funciones para gestionar libros
@@ -20,6 +22,7 @@ namespace GestionBiblioteca.Models
         {
             if (ValidarLibro(libro))
             {
+                libro.Id = ++ultimoIdLibro; // Asignar el siguiente ID
                 libros.Add(libro);
             }
         }
@@ -59,6 +62,7 @@ namespace GestionBiblioteca.Models
         {
             if (ValidarUsuario(usuario))
             {
+                usuario.Id = ++ultimoIdUsuario; // Asignar el siguiente ID
                 usuarios.Add(usuario);
             }
         }

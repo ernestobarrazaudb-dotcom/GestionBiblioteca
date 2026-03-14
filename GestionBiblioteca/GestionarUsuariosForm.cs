@@ -42,7 +42,7 @@ namespace GestionBiblioteca
                 return;
             }
 
-            Usuario nuevoUsuario = new Usuario(biblioteca.ListarUsuarios().Count + 1, nombre, correo);
+            Usuario nuevoUsuario = new Usuario(0, nombre, correo);
             biblioteca.AgregarUsuario(nuevoUsuario);
             CargarUsuarios();
             LimpiarCampos();
@@ -108,6 +108,7 @@ namespace GestionBiblioteca
 
             biblioteca.EliminarUsuario(usuarioSeleccionado.Id);
             CargarUsuarios();
+            LimpiarCampos();
 
             MessageBox.Show("Usuario eliminado con éxito.");
             return;

@@ -37,6 +37,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // comboBoxLibros
@@ -78,7 +79,7 @@
             // listBoxPrestamos
             // 
             this.listBoxPrestamos.FormattingEnabled = true;
-            this.listBoxPrestamos.Location = new System.Drawing.Point(15, 192);
+            this.listBoxPrestamos.Location = new System.Drawing.Point(15, 204);
             this.listBoxPrestamos.Name = "listBoxPrestamos";
             this.listBoxPrestamos.Size = new System.Drawing.Size(460, 121);
             this.listBoxPrestamos.TabIndex = 4;
@@ -120,11 +121,21 @@
             this.label5.TabIndex = 18;
             this.label5.Text = "GESTIÓN DE PRESTAMOS DE LIBROS";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 188);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(108, 13);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "Listado de Préstamos";
+            // 
             // GestionarPrestamosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(492, 369);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -152,5 +163,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
     }
 }

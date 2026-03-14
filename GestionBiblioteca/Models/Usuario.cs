@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms.DataVisualization.Charting;
 
 
 namespace GestionBiblioteca.Models
@@ -18,6 +19,11 @@ namespace GestionBiblioteca.Models
             Id = id;
             Nombre = nombre;
             Correo = correo;
+        }
+
+        public override string ToString()
+        {
+            return $"{Id}: {Nombre} - {Correo}";
         }
     }
 }

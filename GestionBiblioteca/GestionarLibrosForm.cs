@@ -1,5 +1,5 @@
-﻿using System;
-using System.Linq;
+﻿using GestionBiblioteca.Models;
+using System;
 using System.Windows.Forms;
 
 namespace GestionBiblioteca
@@ -7,8 +7,6 @@ namespace GestionBiblioteca
     public partial class GestionarLibrosForm : Form
     {
         private Biblioteca biblioteca;
-        private int siguienteId = 1; // Para asignar IDs únicos a los libros
-        // Parameterless constructor required by the Windows Forms designer
         public GestionarLibrosForm()
         {
             InitializeComponent();

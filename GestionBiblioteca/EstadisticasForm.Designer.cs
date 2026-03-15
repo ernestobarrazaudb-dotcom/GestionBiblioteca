@@ -64,7 +64,7 @@
             this.chartEstadisticas.AntiAliasing = System.Windows.Forms.DataVisualization.Charting.AntiAliasingStyles.Graphics;
             this.chartEstadisticas.Location = new System.Drawing.Point(232, 25);
             this.chartEstadisticas.Name = "chartEstadisticas";
-            this.chartEstadisticas.Size = new System.Drawing.Size(448, 261);
+            this.chartEstadisticas.Size = new System.Drawing.Size(477, 291);
             this.chartEstadisticas.TabIndex = 4;
             this.chartEstadisticas.Text = "chart1";
             // 
@@ -79,7 +79,7 @@
             // 
             // SalirUsuario
             // 
-            this.SalirUsuario.Location = new System.Drawing.Point(588, 292);
+            this.SalirUsuario.Location = new System.Drawing.Point(617, 322);
             this.SalirUsuario.Name = "SalirUsuario";
             this.SalirUsuario.Size = new System.Drawing.Size(92, 24);
             this.SalirUsuario.TabIndex = 15;
@@ -89,7 +89,7 @@
             // 
             // EstadisticasForm
             // 
-            this.ClientSize = new System.Drawing.Size(695, 324);
+            this.ClientSize = new System.Drawing.Size(721, 358);
             this.Controls.Add(this.SalirUsuario);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.chartEstadisticas);

@@ -95,8 +95,8 @@ namespace GestionBiblioteca
                 biblioteca.DevolverLibro(prestamoId);
                 CargarPrestamos();
                 MessageBox.Show("Libro devuelto exitosamente.");
-                comboBoxLibros.Items.Clear();
-                comboBoxUsuarios.Items.Clear();
+                comboBoxLibros.SelectedItem = null;
+                comboBoxUsuarios.SelectedItem = null;
             }
             catch (Exception ex)
             {

@@ -14,10 +14,10 @@ https://drive.google.com/file/d/1wE2txJgJI8dTCzdiXuQ_j7rxJK6JSokh/view?usp=shari
 
 Para descomprimir el archivo de instalación sera necesario utilizar la contraseña: Biblioteca
 
-Los pasos para el proceso de instalación se encuentran en el siguiente documento:
+Los pasos para el proceso de instalación se encuentran en el siguiente documento en formato PDF:
 
 https://drive.google.com/file/d/1UCE944tPhgH_AM6VpHhb4NbmjPNXQV2M/view?usp=sharing
 
-Posee una Guia de uso, el cual puede ser descargado en el siguiente enlace:
+Posee una Guia de Uso en formato PDF, el cual puede ser visualizado mediante el siguiente enlace:
 
 https://drive.google.com/file/d/1RuK8nKbxl_5MV4V9Sdhh5hbPqb7muWHD/view?usp=sharing

@@ -33,7 +33,13 @@ namespace GestionBiblioteca
         {
             try
             {
-                var libro = new Libro(0, txtTitulo.Text, txtAutor.Text, int.Parse(txtAnioPublicacion.Text));
+                if (string.IsNullOrWhiteSpace(txtTitulo.Text) || string.IsNullOrWhiteSpace(txtAutor.Text) || !int.TryParse(txtAnioPublicacion.Text, out int anioPublicacion) || anioPublicacion <= 0)
+                {
+                    MessageBox.Show("Por favor, completa todos los campos correctamente.");
+                    return;
+                }
+
+                var libro = new Libro(0, txtTitulo.Text, txtAutor.Text, anioPublicacion, true); // Asumiendo que 'true' indica que el libro está disponible
                 biblioteca.AgregarLibro(libro);
                 CargarLibros();
                 LimpiarCampos();
@@ -41,7 +47,7 @@ namespace GestionBiblioteca
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Error al agregar el libro: " + ex.Message);
             }
         }
 
@@ -55,9 +61,15 @@ namespace GestionBiblioteca
 
             try
             {
+                if (string.IsNullOrWhiteSpace(txtTitulo.Text) || string.IsNullOrWhiteSpace(txtAutor.Text) || !int.TryParse(txtAnioPublicacion.Text, out int anioPublicacion) || anioPublicacion <= 0)
+                {
+                    MessageBox.Show("Por favor, completa todos los campos correctamente.");
+                    return;
+                }
+
                 var selectedItem = listBoxLibros.SelectedItem.ToString();
                 var id = int.Parse(selectedItem.Split(new[] { " - " }, StringSplitOptions.None)[0]);
-                var libroActualizado = new Libro(id, txtTitulo.Text, txtAutor.Text, int.Parse(txtAnioPublicacion.Text));
+                var libroActualizado = new Libro(id, txtTitulo.Text, txtAutor.Text, anioPublicacion, true); // Asumiendo que 'true' indica que el libro está disponible
                 biblioteca.ActualizarLibro(libroActualizado);
                 CargarLibros();
                 LimpiarCampos();
@@ -65,9 +77,10 @@ namespace GestionBiblioteca
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Error al actualizar el libro: " + ex.Message);
             }
         }
+
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
@@ -100,7 +113,7 @@ namespace GestionBiblioteca
         }
 
         // Evento para llenar los campos al seleccionar un libro
-        private void listBoxLibros_SelectedIndexChanged(object sender, EventArgs e)
+        public void listBoxLibros_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (listBoxLibros.SelectedItem != null)
             {

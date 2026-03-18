@@ -54,6 +54,7 @@ namespace GestionBiblioteca
             }
         }
 
+
         private void btnRegistrarPrestamo_Click(object sender, EventArgs e)
         {
             try
@@ -67,7 +68,8 @@ namespace GestionBiblioteca
                 var libroId = int.Parse(comboBoxLibros.SelectedItem.ToString().Split('-')[0].Trim());
                 var usuarioId = int.Parse(comboBoxUsuarios.SelectedItem.ToString().Split('-')[0].Trim());
 
-                biblioteca.RegistrarPrestamo(libroId, usuarioId);
+                var prestamo = new Prestamo(0, usuarioId, libroId, DateTime.Now);
+                biblioteca.RegistrarPrestamo(prestamo);
                 CargarPrestamos();
                 MessageBox.Show("Préstamo registrado exitosamente.");
                 comboBoxLibros.SelectedItem = null;
@@ -78,6 +80,7 @@ namespace GestionBiblioteca
                 MessageBox.Show(ex.Message);
             }
         }
+
 
         private void btnDevolverLibro_Click(object sender, EventArgs e)
         {

@@ -14,12 +14,13 @@ namespace GestionBiblioteca.Models
         public int AnioPublicacion { get; set; }
         public bool Disponible { get; set; } = true;
 
-        public Libro(int id, string titulo, string autor, int anioPublicacion)
+        public Libro(int id, string titulo, string autor, int anioPublicacion, bool disponible)
         {
             Id = id;
             Titulo = titulo;
             Autor = autor;
             AnioPublicacion = anioPublicacion;
+            Disponible = disponible;
         }
     }
 }

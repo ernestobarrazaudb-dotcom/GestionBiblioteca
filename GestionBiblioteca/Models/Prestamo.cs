@@ -16,12 +16,13 @@ namespace GestionBiblioteca.Models
         public DateTime? FechaDevolucion { get; set; }
         public bool EstaDevuelto => FechaDevolucion.HasValue;
 
-        public Prestamo(int id, int idLibro, int idUsuario, DateTime fechaPrestamo)
+        public Prestamo(int id, int idLibro, int idUsuario, DateTime fechaPrestamo, DateTime? fechaDevolucion = null)
         {
             Id = id;
             IdLibro = idLibro;
             IdUsuario = idUsuario;
             FechaPrestamo = fechaPrestamo;
+            FechaDevolucion = fechaDevolucion;
         }
     }
 }

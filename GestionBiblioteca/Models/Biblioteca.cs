@@ -18,6 +18,7 @@ namespace GestionBiblioteca.Models
         private List<Libro> libros = new List<Libro>();
         private List<Prestamo> prestamos = new List<Prestamo>();
 
+        
         public void AgregarUsuario(Usuario usuario)
         {
             if (ValidarUsuario(usuario))

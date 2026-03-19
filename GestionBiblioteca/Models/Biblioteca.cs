@@ -70,6 +70,12 @@ namespace GestionBiblioteca.Models
             return CargarLibros();
         }
 
+        public bool EstaDisponible(int idLibro)
+        {
+            // Verifica si hay algún préstamo activo para este libro
+            return !prestamos.Any(p => p.IdLibro == idLibro && p.FechaDevolucion == null);
+        }
+
         public void ActualizarLibro(Libro libroActualizado)
         {
             var libro = ObtenerLibro(libroActualizado.Id);
@@ -78,6 +84,7 @@ namespace GestionBiblioteca.Models
                 libro.Titulo = libroActualizado.Titulo;
                 libro.Autor = libroActualizado.Autor;
                 libro.AnioPublicacion = libroActualizado.AnioPublicacion;
+                libro.Disponible = libroActualizado.Disponible;
                 GuardarLibros();
             }
         }

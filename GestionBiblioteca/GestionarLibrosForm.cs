@@ -39,7 +39,7 @@ namespace GestionBiblioteca
                     return;
                 }
 
-                var libro = new Libro(0, txtTitulo.Text, txtAutor.Text, anioPublicacion, true); // Asumiendo que 'true' indica que el libro está disponible
+                var libro = new Libro(0, txtTitulo.Text, txtAutor.Text, anioPublicacion, true); // 'true' indica que el libro está disponible
                 biblioteca.AgregarLibro(libro);
                 CargarLibros();
                 LimpiarCampos();
@@ -69,7 +69,7 @@ namespace GestionBiblioteca
 
                 var selectedItem = listBoxLibros.SelectedItem.ToString();
                 var id = int.Parse(selectedItem.Split(new[] { " - " }, StringSplitOptions.None)[0]);
-                var libroActualizado = new Libro(id, txtTitulo.Text, txtAutor.Text, anioPublicacion, true); // Asumiendo que 'true' indica que el libro está disponible
+                var libroActualizado = new Libro(id, txtTitulo.Text, txtAutor.Text, anioPublicacion, true); // 'true' indica que el libro está disponible
                 biblioteca.ActualizarLibro(libroActualizado);
                 CargarLibros();
                 LimpiarCampos();

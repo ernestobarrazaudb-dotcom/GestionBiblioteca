@@ -68,6 +68,14 @@ namespace GestionBiblioteca
                 var libroId = int.Parse(comboBoxLibros.SelectedItem.ToString().Split('-')[0].Trim());
                 var usuarioId = int.Parse(comboBoxUsuarios.SelectedItem.ToString().Split('-')[0].Trim());
 
+                // Verificar la disponibilidad del libro
+                if (!biblioteca.EstaDisponible(libroId))
+                {
+                    MessageBox.Show("El libro no está disponible para préstamo.");
+                    return;
+                }
+
+                // Crear el préstamo si el libro está disponible
                 var prestamo = new Prestamo(0, usuarioId, libroId, DateTime.Now);
                 biblioteca.RegistrarPrestamo(prestamo);
                 CargarPrestamos();

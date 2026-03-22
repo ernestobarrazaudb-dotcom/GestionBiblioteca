@@ -72,8 +72,15 @@ namespace GestionBiblioteca.Models
 
         public bool EstaDisponible(int idLibro)
         {
-            // Verifica si hay algún préstamo activo para este libro
-            return !prestamos.Any(p => p.IdLibro == idLibro && p.FechaDevolucion == null);
+            // Busca el libro por ID
+            var libro = libros.FirstOrDefault(l => l.Id == idLibro);
+            if (libro == null)
+            {
+                throw new Exception("Libro no encontrado.");
+            }
+
+            // Retorna el estado de disponibilidad del libro
+            return libro.Disponible;
         }
 
         public void ActualizarLibro(Libro libroActualizado)
@@ -99,9 +106,9 @@ namespace GestionBiblioteca.Models
             }
         }
 
-        public void RegistrarPrestamo(Prestamo prestamo)
+        public void RegistrarPrestamo(Prestamo prestamo, int libroId)
         {
-            var libro = ObtenerLibro(prestamo.IdLibro);
+            var libro = ObtenerLibro(libroId);
             if (libro != null && libro.Disponible)
             {
                 prestamo.Id = ObtenerSiguienteIdPrestamo();

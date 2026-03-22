@@ -77,7 +77,7 @@ namespace GestionBiblioteca
 
                 // Crear el préstamo si el libro está disponible
                 var prestamo = new Prestamo(0, usuarioId, libroId, DateTime.Now);
-                biblioteca.RegistrarPrestamo(prestamo);
+                biblioteca.RegistrarPrestamo(prestamo,libroId);
                 CargarPrestamos();
                 MessageBox.Show("Préstamo registrado exitosamente.");
                 comboBoxLibros.SelectedItem = null;
